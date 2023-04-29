@@ -3,14 +3,12 @@
 require "vendor/autoload.php";
 
 session_start();
-// 2. Why do you think the session variable assignments are wrapped inside an if-else and try-catch statements?
-// _____________________________________________________________________
 
 try {
-    if (isset($_POST['user_fullname'])) {
-        $_SESSION['user_fullname'] = $_POST['fullname'];
-        $_SESSION['user_email'] = $_POST['email'];
-        $_SESSION['user_birthday'] = $_POST['birthdate'];
+    if (isset($_POST['complete_name'])) {
+        $_SESSION['complete_name'] = $_POST['complete_name'];
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['birthdate'] = $_POST['birthdate'];
 
         header('Location: quiz.php');
         exit;
